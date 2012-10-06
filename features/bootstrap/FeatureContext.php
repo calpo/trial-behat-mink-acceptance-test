@@ -33,14 +33,14 @@ class FeatureContext extends MinkContext
     }
 
     /**
-     * @Given /^スマートフォンで接続する$/
+     * @Given /^"([^"]*)" で接続する$/
      */
-    public function iConnectWithAuTerminal()
+    public function iConnectWithSomeTerminal($ua)
     {
         $this->getSession()
           ->getDriver()
           ->getClient()
-          ->setServerParameters(['HTTP_USER_AGENT' => 'iPhone 4G Apple']);
+          ->setServerParameters(['HTTP_USER_AGENT' => $ua]);
     }
 
 }
