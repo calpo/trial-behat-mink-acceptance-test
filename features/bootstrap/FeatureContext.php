@@ -32,15 +32,15 @@ class FeatureContext extends MinkContext
         // Initialize your context here
     }
 
-//
-// Place your definition and hook methods here:
-//
-//    /**
-//     * @Given /^I have done something with "([^"]*)"$/
-//     */
-//    public function iHaveDoneSomethingWith($argument)
-//    {
-//        doSomethingWith($argument);
-//    }
-//
+    /**
+     * @Given /^スマートフォンで接続する$/
+     */
+    public function iConnectWithAuTerminal()
+    {
+        $this->getSession()
+          ->getDriver()
+          ->getClient()
+          ->setServerParameters(['HTTP_USER_AGENT' => 'iPhone 4G Apple']);
+    }
+
 }
